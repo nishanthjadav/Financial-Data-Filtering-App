@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "financial_data_filtering_react/package.json",
+            "use": "@vercel/react"
+        },
+        {
+            "src": "flask-server/server.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/flask-server/server.py"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/financial_data_filtering_react/build/$1"
+        }
+    ]
+}
