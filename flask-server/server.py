@@ -13,7 +13,7 @@ from waitress import serve  # Import Waitress for production server compatibilit
 
 
 # Initialize Flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder='financial_data_filtering/build')
 CORS(app)  # Enable CORS for all routes to allow requests from different origins
 
 # API Key and URL for fetching data from the Financial Modeling Prep API
