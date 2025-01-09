@@ -16,7 +16,6 @@ export const fetchData = async (filters, sortBy) => {
         // Send GET request to the API endpoint with the query parameters
         const response = await fetch(`${API_URL}?${queryParams.toString()}`);
 
-        // If the response is not OK (status code not in the range 200-299), throw an error
         if (!response.ok) {
             throw new Error("Failed to fetch data");
         }
@@ -25,7 +24,6 @@ export const fetchData = async (filters, sortBy) => {
         const data = await response.json();
         return data;
     } catch (error) {
-        // Log any errors that occur and return an empty array
         console.error(error);
         return [];
     }
