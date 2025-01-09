@@ -10,10 +10,8 @@ import DataTable from "./components/DataTable.js"; // Component for displaying d
 import FilterControls from "./components/FilterControls.js"; // Component for filtering and sorting controls
 
 const App = () => {
-  // State to hold the original data fetched from the API
   const [data, setData] = useState([]);
 
-  // State to hold the filtered and sorted data displayed in the table
   const [filteredData, setFilteredData] = useState([]);
 
   // useEffect to fetch data from the API when the component mounts
@@ -21,9 +19,9 @@ const App = () => {
   // Date Modified: 2025-01-08
   useEffect(() => {
     const loadData = async () => {
-      const apiData = await fetchData(); // Fetch data from API
-      setData(apiData); // Store the original data
-      setFilteredData(apiData); // Initialize filtered data with the original data
+      const apiData = await fetchData(); 
+      setData(apiData);
+      setFilteredData(apiData); 
     };
     loadData();
   }, []); // Dependency array ensures this runs only on mount
