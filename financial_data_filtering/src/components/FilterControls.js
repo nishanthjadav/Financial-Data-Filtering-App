@@ -10,20 +10,20 @@ import React, { useState } from "react";
 const FilterControls = ({ onFilterChange, onSortChange }) => {
     // State to track filter input values
     const [filters, setFilters] = useState({
-        startDate: "",      // Start year for date range filtering
-        endDate: "",        // End year for date range filtering
-        minRevenue: "",     // Minimum revenue for filtering
-        maxRevenue: "",     // Maximum revenue for filtering
-        minNetIncome: "",   // Minimum net income for filtering
-        maxNetIncome: "",   // Maximum net income for filtering
+        startDate: "",      
+        endDate: "",        
+        minRevenue: "",     
+        maxRevenue: "",     
+        minNetIncome: "",   
+        maxNetIncome: "",   
     });
 
     // Handler for updating filters when input values change
     const handleFilterChange = (e) => {
-        const { name, value } = e.target; // Destructure name and value from the event
-        const updatedFilters = { ...filters, [name]: value }; // Update the corresponding filter
-        setFilters(updatedFilters); // Update local state
-        onFilterChange(updatedFilters); // Notify parent component of the updated filters
+        const { name, value } = e.target; 
+        const updatedFilters = { ...filters, [name]: value }; 
+        setFilters(updatedFilters); 
+        onFilterChange(updatedFilters); 
     };
 
     return (
