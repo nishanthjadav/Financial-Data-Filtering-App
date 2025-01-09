@@ -6,7 +6,7 @@
 
 import React, { useState } from "react";
 
-// Utility function to format a number as currency in USD
+//  function to format a number as currency in USD
 // Date Created: 2025-01-07
 const formatCurrency = (value) => {
     return new Intl.NumberFormat('en-US', {
@@ -17,7 +17,7 @@ const formatCurrency = (value) => {
 
 const DataTable = ({ data }) => {
     // State to manage the current sorting configuration
-    // `key` represents the column being sorted, and `direction` is the sort order (asc/desc)
+    // key represents the column being sorted, and direction is the sort order (asc/desc)
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
 
     // Function to handle sorting when a column header is clicked
@@ -29,8 +29,8 @@ const DataTable = ({ data }) => {
         setSortConfig({ key, direction });
     };
 
-    // Memoized function to compute sorted data based on `sortConfig`
-    // Ensures sorting is only recalculated when `data` or `sortConfig` changes
+    // Memoized function to compute sorted data based on sortConfig
+    // Ensures sorting is only recalculated when data or sortConfig changes
     // Date Created: 2025-01-07
     const sortedData = React.useMemo(() => {
         if (sortConfig.key) {
@@ -43,7 +43,6 @@ const DataTable = ({ data }) => {
         return data;
     }, [data, sortConfig]);
 
-    // Function to render the sort icon for a column header
     // Displays an ascending or descending arrow based on the current sort direction
     // Date Created: 2025-01-07
     const renderSortIcon = (key) => {
